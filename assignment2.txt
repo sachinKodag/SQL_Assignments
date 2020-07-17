@@ -1,0 +1,13 @@
+Q1.
+
+Ans==>Cnum
+
+q2.
+Ans==>Rating
+
+Q3.
+Ans==>another word for row ...tuple/Entity/Opurtnity.
+Ans==>another word for column...attribute/method.
+
+q4.
+Ans==>Row store wherever it get free space,So row addressing not as per we enter row.That's why you can not say which is first or last n rows.
