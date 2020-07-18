@@ -1,0 +1,14 @@
+1)
+select * from assignment1.orders where Odate = '1990-10-03' or Odate = '1990-10-04';
+
+2)
+select * from assignment1.salespeople where Sname = 'Peel' or Sname = 'Motika';
+
+3)
+select * from assignment1.customers where Cname >= "A" and Cname <= "H";
+
+4)
+select * from assignment1.customers where Cname LIKE 'C%';
+
+5)
+select * from assignment1.orders where Amt IS NOT null;
