@@ -1,0 +1,35 @@
+1) Write a query that selects all customers whose ratings are equal to or greater than
+ANY of Serres’. 
+ANS==>
+select * from customers
+where customers.Rating >= ANY
+(select customers.Rating from customers
+where customers.Snum in(select salespeople.Snum from salespeople
+where salespeople.Sname = 'Serres'));
+
+2) Write a query using ANY or ALL that will find all salespeople who have no
+customers located in their city. 
+ANS==>
+select * from salespeople
+where (salespeople.Snum, salespeople.City) NOT IN
+(select customers.City from customers);
+
+
+3) Write a query that selects all orders for amounts greater than any for the
+customers in London. 
+ANS==>
+select * from orders
+where orders.Amt > ANY
+(select orders.Amt from orders
+where orders.Cnum in 
+(select customers.Cnum from customers
+where City = 'London'));
+
+4) Write the above query using MIN or MAX.
+ANS==> 
+select * from orders
+where orders.Amt > ANY
+(select min(orders.Amt) from orders
+where orders.Cnum in 
+(select customers.Cnum from customers
+where City = 'London'));
