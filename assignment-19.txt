@@ -1,0 +1,16 @@
+1) Create a view that shows all of the customers who have the highest ratings.
+ANS==>
+create view v1 as select * from customers where rating = 'High Rating';
+
+2) Create a view that shows the number of salespeople in each city.
+ANS==>
+create view v2 as select count(Snum), City from salespeople group by City;
+
+3) Create a view that shows the average and total orders for each salesperson after
+his or her name. Assume all names are unique.
+ANS==>
+create view v3 as 
+select Sname,avg(Amt), count(Onum) from orders, salespeople 
+where salespeople.Snum = orders.Snum 
+group by orders.Snum;
+

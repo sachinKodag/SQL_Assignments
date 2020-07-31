@@ -1,0 +1,14 @@
+1) Which of these views are updateable (will allow DML operations)? 
+ANS==>
+#3 Create view Thirdorders
+as Select * from Dailyorders where
+odate=’1990-10-03’; 
+
+2) Create a view of the Salespeople table called Commissions. This view will include
+only the snum and comm fields. Through this view, someone could enter or change
+commissions, but only to values between .10 and .20. 
+ANS==>
+create view commissions as 
+select snum, comm from salespeople
+where comm between 0.10 and 0.20
+with check option;
